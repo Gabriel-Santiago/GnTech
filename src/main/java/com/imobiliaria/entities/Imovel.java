@@ -2,6 +2,7 @@ package com.imobiliaria.entities;
 
 import com.imobiliaria.enums.Apartamento;
 import com.imobiliaria.enums.Casa;
+import com.imobiliaria.enums.Desconto;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -29,7 +30,7 @@ public class Imovel extends BaseEntity {
     private LocalDateTime dataCheckOut;
     private Integer diasRestanteHospedagem;
     private BigDecimal valorDiaria;
-    private boolean desconto;
+    private boolean Temdesconto;
     private BigDecimal valorDesconto;
     private BigDecimal porcentagemDesconto;
 
@@ -38,6 +39,9 @@ public class Imovel extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     private Casa casa;
+
+    @Enumerated(EnumType.STRING)
+    private Desconto desconto;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "imobiliariaId")
