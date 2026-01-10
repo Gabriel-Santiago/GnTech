@@ -10,8 +10,6 @@ import java.util.List;
 @Repository
 public interface ImovelRepository extends JpaRepository<Imovel,Long> {
 
-    boolean existsByCnpj(String cnpj);
-
     List<Imovel> findByImobiliariaId(Long imobiliariaId);
 
     List<Imovel> findByTipoImovel(TipoImovel tipoImovel);
