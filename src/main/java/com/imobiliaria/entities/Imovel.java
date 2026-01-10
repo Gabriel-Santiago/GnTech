@@ -1,7 +1,6 @@
 package com.imobiliaria.entities;
 
-import com.imobiliaria.enums.Apartamento;
-import com.imobiliaria.enums.Casa;
+import com.imobiliaria.enums.TipoImovel;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -31,10 +30,7 @@ public class Imovel extends BaseEntity {
     private BigDecimal valorDiaria;
 
     @Enumerated(EnumType.STRING)
-    private Apartamento apartamento;
-
-    @Enumerated(EnumType.STRING)
-    private Casa casa;
+    private TipoImovel tipoImovel;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "imobiliariaId")

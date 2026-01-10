@@ -1,8 +1,7 @@
 package com.imobiliaria.repositories;
 
 import com.imobiliaria.entities.Imovel;
-import com.imobiliaria.enums.Apartamento;
-import com.imobiliaria.enums.Casa;
+import com.imobiliaria.enums.TipoImovel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,9 +14,7 @@ public interface ImovelRepository extends JpaRepository<Imovel,Long> {
 
     List<Imovel> findByImobiliariaId(Long imobiliariaId);
 
-    List<Imovel> findByApartamento(Apartamento apartamento);
-
-    List<Imovel> findByCasa(Casa casa);
+    List<Imovel> findByTipoImovel(TipoImovel tipoImovel);
 
     List<Imovel> findByBairro(String bairro);
 
