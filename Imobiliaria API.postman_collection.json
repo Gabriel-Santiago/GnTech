@@ -1,0 +1,386 @@
+{
+	"info": {
+		"_postman_id": "9a041e75-a1d1-4f7e-bb80-de898f6123b9",
+		"name": "Imobiliaria API",
+		"description": "Collection para testar a API de Imobiliarias e Imoveis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43469109",
+		"_collection_link": "https://gabriel-8484893.postman.co/workspace/Gabriel's-Workspace~91d08124-ff3e-48f7-8a7d-b79f36a3821c/collection/43469109-9a041e75-a1d1-4f7e-bb80-de898f6123b9?action=share&source=collection_link&creator=43469109"
+	},
+	"item": [
+		{
+			"name": "Imobiliarias",
+			"item": [
+				{
+					"name": "Criar Imobiliaria",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cnpj\": \"12345678000199\",\n  \"email\": \"contato@imob.com\",\n  \"senha\": \"123456\",\n  \"responsavel\": \"João Silva\",\n  \"telefone\": \"11999999999\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/imobiliaria/cadastro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"imobiliarias",
+								"cadastro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Imobiliarias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/imobiliaria",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"imobiliarias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Email Imobiliaria",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"imobiliariaId\": 1,\n  \"email\": \"novoemail@imob.com\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/imobiliaria/email",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"imobiliarias",
+								"email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Telefone Imobiliaria",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"imobiliariaId\": 1,\n  \"telefone\": \"11888887777\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/imobiliaria/telefone",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"imobiliarias",
+								"telefone"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Imobiliaria",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"imobiliariaId\": 1,\n  \"senha\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/imobiliaria",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"imobiliarias"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Imoveis",
+			"item": [
+				{
+					"name": "Criar Imovel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"imobiliariaId\": 1,\n  \"cep\": \"01001000\",\n  \"numero\": \"100\",\n  \"alugado\": true,\n  \"dataCheckIn\": \"2026-01-10T14:00:00\",\n  \"dataCheckOut\": \"2026-01-20T12:00:00\",\n  \"valorDiaria\": 250.00,\n  \"tipoImovel\": \"APARTAMENTO\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/imovel/cadastro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"imoveis",
+								"cadastro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Todos Imoveis",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/imovel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"imoveis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Imoveis por Imobiliaria",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/imovel/imobiliaria/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"imoveis",
+								"imobiliaria",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Imoveis por Tipo de Imóvel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/imovel/tipo?tipo=PADRAO",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"imoveis",
+								"tipo"
+							],
+							"query": [
+								{
+									"key": "tipo",
+									"value": "PADRAO"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Imoveis por Bairro",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/imovel/bairro?bairro=Sé",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"imoveis",
+								"bairro"
+							],
+							"query": [
+								{
+									"key": "bairro",
+									"value": "Sé"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Imoveis por Cidade",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/imovel/cidade?cidade=São Paulo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"imoveis",
+								"cidade"
+							],
+							"query": [
+								{
+									"key": "cidade",
+									"value": "São Paulo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Imoveis por Estado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/imovel/estado?estado=SP",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"imoveis",
+								"estado"
+							],
+							"query": [
+								{
+									"key": "estado",
+									"value": "SP"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Valor Diaria",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"imovelId\": 1,\n  \"valorDiaria\": 300.00\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/imovel/valor-diaria",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"imoveis",
+								"valor-diaria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Imovel",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"imovelId\": 1,\n  \"senha\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/imovel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"imoveis"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
