@@ -91,7 +91,7 @@ public class ImovelService {
         repository.save(imovel);
     }
 
-    List<ImovelResponseDTO> findAll() {
+    public List<ImovelResponseDTO> findAll() {
         return repository
                 .findAll()
                 .stream()
@@ -99,7 +99,7 @@ public class ImovelService {
                 .toList();
     }
 
-    List<ImovelResponseDTO> findByImobiliaria(Long imobiliariaId) {
+    public List<ImovelResponseDTO> findByImobiliaria(Long imobiliariaId) {
         return repository
                 .findByImobiliariaId(imobiliariaId)
                 .stream()
@@ -107,7 +107,7 @@ public class ImovelService {
                 .toList();
     }
 
-    List<ImovelResponseDTO> findByTipoImovel(TipoImovel tipoImovel) {
+    public List<ImovelResponseDTO> findByTipoImovel(TipoImovel tipoImovel) {
         return repository
                 .findByTipoImovel(tipoImovel)
                 .stream()
@@ -115,7 +115,7 @@ public class ImovelService {
                 .toList();
     }
 
-    List<ImovelResponseDTO> findByBairro(String bairro) {
+    public List<ImovelResponseDTO> findByBairro(String bairro) {
         return repository
                 .findByBairro(bairro)
                 .stream()
@@ -123,7 +123,7 @@ public class ImovelService {
                 .toList();
     }
 
-    List<ImovelResponseDTO> findByCidade(String cidade) {
+    public List<ImovelResponseDTO> findByCidade(String cidade) {
         return repository
                 .findByCidade(cidade)
                 .stream()
@@ -131,7 +131,7 @@ public class ImovelService {
                 .toList();
     }
 
-    List<ImovelResponseDTO> findByEstado(String estado) {
+    public List<ImovelResponseDTO> findByEstado(String estado) {
         return repository
                 .findByEstado(estado)
                 .stream()
