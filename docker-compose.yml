@@ -1,0 +1,24 @@
+services:
+  db:
+    image: postgres:15
+    container_name: postgres_imobiliaria
+    restart: always
+    environment:
+      POSTGRES_DB: imobiliaria
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+
+  api:
+    build: .
+    container_name: imobiliaria_api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/imobiliaria
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      SPRING_PROFILES_ACTIVE: docker
